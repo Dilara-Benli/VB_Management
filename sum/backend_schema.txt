@@ -1,0 +1,32 @@
+Backend/
+│
+├── Controllers/            
+│   ├── CustomerController.cs
+│   ├── AccountController.cs
+│   └── TransactionController.cs
+│
+├── Services/               
+│   ├── Interfaces/         
+│   │   ├── ICustomerService.cs
+│   │   ├── IAccountService.cs
+│   │   └── ITransactionService.cs
+│   ├── CustomerService.cs
+│   ├── AccountService.cs
+│   └── TransactionService.cs
+│
+├── Models/                 
+│   ├── Customer.cs
+│   ├── Account.cs
+│   └── Transaction.cs
+│
+├── Repositories/           
+│   ├── Interfaces/         
+│   │   ├── ICustomerRepository.cs
+│   │   ├── IAccountRepository.cs
+│   │   └── ITransactionRepository.cs
+│   ├── CustomerRepository.cs
+│   ├── AccountRepository.cs
+│   └── TransactionRepository.cs
+│
+├── Program.cs              # Uygulamanın başlangıç noktası
+├── appsettings.json        # Konfigürasyon dosyası

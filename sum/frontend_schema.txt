@@ -1,0 +1,83 @@
+src/
+├── assets/
+│   └── logo.png
+├── app/
+│   ├── app.module.ts
+│   ├── app-routing.module.ts
+│   ├── app.component.css
+│   ├── app.component.html
+│   ├── app.component.ts
+│   ├── shared/
+│   │   ├── pipes/
+│   │   │   └── first-key.pipe.ts
+│   │   └── services/
+│   │       ├── account.service.ts
+│   │       ├── auth.service.ts
+│   │       ├── profile.service.ts
+│   │       └── transaction.service.ts
+│   ├── auth/
+│   │   ├── auth.module.ts
+│   │   ├── auth-routing.module.ts
+│   │   ├── login/
+│   │   │   ├── login.component.ts
+│   │   │   ├── login.component.html
+│   │   │   ├── login.component.css
+│   │   └── register/
+│   │       ├── register.component.ts
+│   │       ├── register.component.html
+│   │       ├── register.component.css
+│   ├── dashboard/
+│       ├── dashboard.module.ts
+│       ├── dashboard-routing.module.ts
+│       ├── dashboard.component.ts
+│       ├── dashboard.component.html
+│       ├── dashboard.component.css
+│       ├── home/
+│       │   ├── home.component.ts
+│       │   ├── home.component.html
+│       │   ├── home.component.css
+│       ├── transactions/
+│       │   ├── transactions.module.ts
+│       │   ├── transactions-routing.module.ts
+│       │   ├── balance-check/
+│       │   │   ├── balance-check.component.ts
+│       │   │   ├── balance-check.component.html
+│       │   │   ├── balance-check.component.css
+│       │   ├── deposit/
+│       │   │   ├── deposit.component.ts
+│       │   │   ├── deposit.component.html
+│       │   │   ├── deposit.component.css
+│       │   ├── withdraw/
+│       │   │   ├── withdraw.component.ts
+│       │   │   ├── withdraw.component.html
+│       │   │   ├── withdraw.component.css
+│       │   ├── transfer/
+│       │   │   ├── transfer.component.ts
+│       │   │   ├── transfer.component.html
+│       │   │   ├── transfer.component.css
+│       │   └── transaction-history/
+│       │       ├── transaction-history.component.ts
+│       │       ├── transaction-history.component.html
+│       │       ├── transaction-history.component.css
+│       ├── accounts/
+│       │   ├── accounts.module.ts
+│       │   ├── accounts-routing.module.ts
+│       │   ├── my-accounts/
+│       │   │   ├── my-accounts.component.ts
+│       │   │   ├── my-accounts.component.html
+│       │   │   ├── my-accounts.component.css
+│       │   └── create-account/
+│       │       ├── create-account.component.ts
+│       │       ├── create-account.component.html
+│       │       ├── create-account.component.css
+│       └── profile/
+│           ├── profile.module.ts
+│           ├── profile-routing.module.ts
+│           ├── my-profile/
+│           │   ├── my-profile.component.ts
+│           │   ├── my-profile.component.html
+│           │   ├── my-profile.component.css
+│           └── logout/
+│               ├── logout.component.ts
+│               ├── logout.component.html
+│               ├── logout.component.css
