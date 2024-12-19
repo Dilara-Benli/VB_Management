@@ -1,6 +1,6 @@
 ## Backend Schema (Asp.Net Core Web Api)
 
-![backend_schema1](https://github.com/user-attachments/assets/ed75f298-3b27-4459-bc0a-2ffdc16f337a)
+![backend_schema2](https://github.com/user-attachments/assets/5f8758f9-2935-444a-8f3b-f7a09c09e270)
 
 ## Frontend Schema (Angular)
 
