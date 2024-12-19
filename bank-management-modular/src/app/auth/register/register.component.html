@@ -48,6 +48,9 @@
           <div *ngIf="form.controls.identityNumber.hasError('minlength')">
             TC kimlik numarası 11 karakterden oluşmalıdır.
           </div>
+          <div *ngIf="form.controls.identityNumber.hasError('maxlength')">
+            TC kimlik numarası 11 karakterden oluşmalıdır.
+          </div>
           <div *ngIf="form.controls.identityNumber.hasError('pattern')">
             TC kimlik numarası yalnızca rakamlardan oluşmalıdır.
           </div>
