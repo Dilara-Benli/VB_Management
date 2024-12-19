@@ -1,5 +1,3 @@
-# VB_Management
-
 ## Backend Schema
 
 ![backend_schema1](https://github.com/user-attachments/assets/ed75f298-3b27-4459-bc0a-2ffdc16f337a)
