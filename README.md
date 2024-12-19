@@ -1,4 +1,5 @@
 # VB_Management
 
-![backend_schema1](https://github.com/user-attachments/assets/58e9d412-6a19-4eeb-a7cf-a55d80ee76f9)
+![frontend_schema](https://github.com/user-attachments/assets/e1026377-5c36-481d-aa8b-bbab85defd0c)
+
 
