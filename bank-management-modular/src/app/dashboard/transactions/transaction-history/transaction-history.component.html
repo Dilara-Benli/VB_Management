@@ -1,0 +1,19 @@
+<div class="transaction-history-container">
+    <h2 class="transaction-history-header">İşlem Geçmişi</h2>
+
+    <div *ngIf="transactions.length > 0; else noTransactions">
+        <div class="transaction-list">
+            <div *ngFor="let transaction of transactions" class="transaction-card">
+                <p><strong>Hesap Numarası:</strong> {{ transaction.accountID }}</p>
+                <p><strong>İşlem Türü:</strong> {{ transaction.transactionTypeName }}</p>
+                <p><strong>İşlem Miktarı:</strong> {{ transaction.transactionAmount.toFixed(2) }} TL</p>  
+                <p><strong>Tarih:</strong> {{ transaction.transactionDate | date:'dd/MM/yyyy' }}</p>
+                <p><strong>Açıklama:</strong> {{ transaction.transactionExplanation }}</p>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #noTransactions>
+        <p class="no-transactions">İşlem geçmişiniz bulunmamaktadır.</p>
+    </ng-template>
+</div>

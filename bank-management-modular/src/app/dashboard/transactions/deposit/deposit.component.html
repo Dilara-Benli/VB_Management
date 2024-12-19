@@ -1,0 +1,18 @@
+<div class="deposit-container">
+    <h2>Para Yatırma</h2>
+
+    <label for="accountID">Hesap Numarası:</label>
+    <input id="accountID" [(ngModel)]="accountData.accountID" class="form-control" type="number" placeholder="Hesap Numarası Girin"/>
+
+    <label for="amount">Miktar:</label>
+    <input id="amount" [(ngModel)]="accountData.amount" class="form-control" type="number" placeholder="Miktar Girin" (input)="onAmountInput($event)" (keydown)="blockInvalidCharacters($event)"/>
+
+    <label for="explanation">Açıklama:</label>
+    <input id="explanation" [(ngModel)]="accountData.explanation" class="form-control" type="text" placeholder="Açıklama Girin"/>
+
+    <button (click)="deposit()" class="deposit-button">Para Yatır</button>
+
+    <div *ngIf="newBalance !== null" class="response">
+        <p><strong>Yeni Bakiye:</strong> {{ newBalance.toFixed(2) }} TL</p>
+    </div>
+</div>

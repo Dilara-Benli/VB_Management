@@ -1,0 +1,15 @@
+<div class="create-account-container">
+    <h2>Hesap Oluştur</h2>
+    <div>
+        <label for="accountName">Hesap Adı:</label>
+        <input id="accountName" [(ngModel)]="accountData.accountName" name="accountName" required class="form-control" />
+    </div>
+    <div>
+        <label for="currencyType">Para Birimi:</label>
+        <select id="currencyType" [(ngModel)]="accountData.currencyType" name="currencyType" required class="form-control">
+            <option value="TL">TL</option>
+        </select>
+    </div>
+    <button type="button" class="btn-create" (click)="createAccount()">Oluştur</button>
+
+</div>

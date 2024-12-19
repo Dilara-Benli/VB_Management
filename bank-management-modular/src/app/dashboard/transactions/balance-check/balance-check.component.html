@@ -1,0 +1,12 @@
+<div class="balance-check-container">
+    <h2>Bakiye Kontrolü</h2>
+
+    <label for="accountID">Hesap Numarası:</label>
+    <input id="accountID" [(ngModel)]="accountData.accountID" class="form-control" type="number" placeholder="Hesap Numarası Girin" (keydown)="blockInvalidCharacters($event)"/>
+  
+    <button (click)="checkBalance()" class="check-button">Kontrol Et</button>
+
+    <div *ngIf="accountData.accountBalance !== null" class="balance-result">
+        <p><strong>Bakiye:</strong> {{ accountData.accountBalance }} TL</p>
+    </div>
+</div>

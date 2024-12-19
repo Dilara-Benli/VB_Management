@@ -1,0 +1,25 @@
+/*
+.app-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: transparent; 
+}
+
+.app-container .logo {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    max-width: 350px;
+    height: auto;
+}
+
+main {
+    padding-top: 100px;  /* üst boşluk 
+}
+*/

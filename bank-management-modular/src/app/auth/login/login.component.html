@@ -1,0 +1,46 @@
+<div class="logo">
+  <img src="assets/logo.png" alt="VakıfBank Logo">
+</div>
+<div class="container mt-5">
+    <div class="mb-4 text-center">
+      <h2 class="title-large">Giriş Formu</h2>
+    </div>
+  
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="shadow p-4 rounded bg-white">
+      <div class="mb-3">
+        <input
+          type="email"
+          class="form-control bg-body-secondary"
+          placeholder="Mail Adresi"
+          formControlName="email"
+        />
+        <div
+          class="error-feedback"
+          *ngIf="hasDisplayableError('email') && form.controls.email.hasError('required')"
+        >
+          Lütfen mail adresinizi giriniz.
+        </div>
+      </div>
+      <div class="mb-3">
+        <input
+          type="password"
+          class="form-control bg-body-secondary"
+          placeholder="Şifre"
+          formControlName="password"
+        />
+        <div
+          class="error-feedback"
+          *ngIf="hasDisplayableError('password') && form.controls.password.hasError('required')"
+        >
+          Lütfen şifrenizi giriniz.
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success w-100 mt-4">Giriş</button>
+      <div class="text-center mt-3">
+        <span class="text-medium">
+          Bir hesabın yok mu?
+          <a routerLink="/auth/register" class="link-medium">Kaydol</a>
+        </span>
+      </div>
+    </form>
+  </div>

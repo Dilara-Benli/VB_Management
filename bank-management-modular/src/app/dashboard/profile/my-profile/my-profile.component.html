@@ -1,0 +1,34 @@
+<div class="profile-container">
+    <h2 class="profile-title">Profil Bilgileri</h2>
+    <div class="profile-card">
+        <p><strong>Müşteri Numarası:</strong><span>{{ customerData.CustomerID }}</span></p>
+        <p><strong>Ad:</strong>
+            <span *ngIf="!editMode['name']" (dblclick)="toggleEditMode('name')">{{ customerData.CustomerName }}</span>
+            <input *ngIf="editMode['name']" [(ngModel)]="customerData.CustomerName" (blur)="toggleEditMode('name')" type="text" class="form-control" />
+        </p>
+        <p><strong>Soyad:</strong>
+            <span *ngIf="!editMode['lastName']" (dblclick)="toggleEditMode('lastName')">{{ customerData.CustomerLastName }}</span>
+            <input *ngIf="editMode['lastName']" [(ngModel)]="customerData.CustomerLastName" (blur)="toggleEditMode('lastName')" type="text" class="form-control" />
+        </p>
+        <p><strong>TC Kimlik Numarası:</strong>
+            <span *ngIf="!editMode['identityNumber']" (dblclick)="toggleEditMode('identityNumber')">{{ customerData.CustomerIdentityNumber }}</span>
+            <input *ngIf="editMode['identityNumber']" [(ngModel)]="customerData.CustomerIdentityNumber" (blur)="toggleEditMode('identityNumber')" type="number" class="form-control"/>
+        </p>
+        <p><strong>Doğum Tarihi:</strong>
+            <span *ngIf="!editMode['birthDate']" (dblclick)="toggleEditMode('birthDate')">{{ customerData.CustomerBirthDate | date:'dd-MM-yyyy' }}</span>
+            <input *ngIf="editMode['birthDate']" [(ngModel)]="customerData.CustomerBirthDate" (blur)="toggleEditMode('birthDate')" type="date" class="form-control"/>
+        </p>
+        <p><strong>Email:</strong>
+            <span *ngIf="!editMode['email']" (dblclick)="toggleEditMode('email')">{{ customerData.CustomerEmail }}</span>
+            <input *ngIf="editMode['email']" [(ngModel)]="customerData.CustomerEmail" (blur)="toggleEditMode('email')" type="email" class="form-control" />
+        </p>
+    </div>
+    <div class="password-update">
+        <label for="newPassword">Yeni Şifre:</label>
+        <input type="password" id="newPassword" [(ngModel)]="newPassword" placeholder="Yeni şifre girin" class="form-control"/>
+    </div>
+    <div class="button-container">
+        <button class="btn-update" (click)="updateCustomer()">Güncelle</button>
+        <button class="btn-delete" (click)="deleteCustomer()">Sil</button>
+    </div>
+</div>

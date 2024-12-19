@@ -1,0 +1,130 @@
+<div class="logo">
+  <img src="assets/logo.png" alt="VakıfBank Logo">
+</div>
+<div class="container mt-5">
+    <div class="mb-4 text-center">
+      <h2 class="title-large">Kayıt Formu</h2>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="shadow p-4 rounded bg-white">
+      <div class="mb-3">
+        <input
+          type="text"
+          class="form-control bg-body-secondary"
+          placeholder="Ad"
+          formControlName="name"
+        />
+        <div
+          class="error-feedback"
+          *ngIf="hasDisplayableError('name') && form.controls.name.hasError('required')"
+        >
+          Lütfen adınızı giriniz.
+        </div>
+      </div>
+      <div class="mb-3">
+        <input
+          type="text"
+          class="form-control bg-body-secondary"
+          placeholder="Soyad"
+          formControlName="lastName"
+        />
+        <div
+          class="error-feedback"
+          *ngIf="hasDisplayableError('lastName') && form.controls.lastName.hasError('required')"
+        >
+          Lütfen soyadınızı giriniz.
+        </div>
+      </div>
+      <div class="mb-3">
+        <input
+          type="text"
+          class="form-control bg-body-secondary"
+          placeholder="TC Kimlik Numarası"
+          formControlName="identityNumber"
+        />
+        <div class="error-feedback" *ngIf="hasDisplayableError('identityNumber')">
+          <div *ngIf="form.controls.identityNumber.hasError('required')">
+            Lütfen TC kimlik numaranızı giriniz.
+          </div>
+          <div *ngIf="form.controls.identityNumber.hasError('minlength')">
+            TC kimlik numarası 11 karakterden oluşmalıdır.
+          </div>
+          <div *ngIf="form.controls.identityNumber.hasError('pattern')">
+            TC kimlik numarası yalnızca rakamlardan oluşmalıdır.
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <input
+          type="date"
+          class="form-control bg-body-secondary"
+          placeholder="Doğum Tarihi"
+          formControlName="birthDate"
+        />
+        <div
+          class="error-feedback"
+          *ngIf="hasDisplayableError('birthDate') && form.controls.birthDate.hasError('required')"
+        >
+          Lütfen doğum tarihinizi giriniz.
+        </div>
+      </div>
+      <div class="mb-3">
+        <input
+          type="email"
+          class="form-control bg-body-secondary"
+          placeholder="Mail Adresi"
+          formControlName="email"
+        />
+        <div class="error-feedback" *ngIf="hasDisplayableError('email')">
+          <div *ngIf="form.controls.email.hasError('required')">
+            Lütfen mail adresinizi giriniz.
+          </div>
+          <div *ngIf="form.controls.email.hasError('email')">
+            Geçerli bir mail adresi giriniz.
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <input
+          type="password"
+          class="form-control bg-body-secondary"
+          placeholder="Şifre"
+          formControlName="password"
+        />
+        <div class="error-feedback" *ngIf="hasDisplayableError('password')">
+          <div *ngIf="form.controls.password.hasError('required')">
+            Lütfen şifrenizi giriniz.
+          </div>
+          <div *ngIf="form.controls.password.hasError('minlength')">
+            Şifreniz en az 6 karakter olmalıdır.
+          </div>
+          <div *ngIf="form.controls.password.hasError('pattern')">
+            Şifreniz özel karakter içermelidir.
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <input
+          type="password"
+          class="form-control bg-body-secondary"
+          placeholder="Şifre Tekrar"
+          formControlName="confirmPassword"
+        />
+        <div
+          class="error-feedback"
+          *ngIf="
+            hasDisplayableError('confirmPassword') &&
+            form.controls.confirmPassword.hasError('passwordMismatch')"
+        >
+          Şifreler eşleşmiyor.
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success w-100 mt-4">Kayıt Ol</button>
+      <div class="text-center mt-3">
+        <span class="text-medium">
+          Zaten bir hesabınız var mı?
+          <a routerLink="/auth/login" class="link-medium">Giriş yap</a>
+        </span>
+      </div>
+    </form>
+  </div>
+  

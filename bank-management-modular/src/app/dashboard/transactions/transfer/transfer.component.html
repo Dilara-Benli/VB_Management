@@ -1,0 +1,22 @@
+<div class="transfer-container">
+    <h2>Para Transferi</h2>
+
+    <label for="sourceAccountID">Gönderen Hesap Numarası:</label>
+    <input id="sourceAccountID" [(ngModel)]="accountData.sourceAccountID" class="form-control" type="number" placeholder="Gönderen Hesap Numarasını Girin"/>
+
+    <label for="targetAccountID">Alıcı Hesap Numarası:</label>
+    <input id="targetAccountID" [(ngModel)]="accountData.targetAccountID" class="form-control" type="number" placeholder="Alıcı Hesap Numarasını Girin"/>
+
+    <label for="amount">Miktar:</label>
+    <input id="amount" [(ngModel)]="accountData.amount" class="form-control" type="number" placeholder="Miktar Girin" (input)="onAmountInput($event)" (keydown)="blockInvalidCharacters($event)"/>
+
+    <label for="explanation">Açıklama:</label>
+    <input id="explanation" [(ngModel)]="accountData.explanation" class="form-control" type="text" placeholder="Açıklama Girin"/>
+
+    <button (click)="transfer()" class="transfer-button">Transfer Et</button>
+
+    <div *ngIf="fromAccountNewBalance !== null && toAccountNewBalance !== null" class="response">
+        <p><strong>Gönderen Yeni Bakiye:</strong> {{ fromAccountNewBalance.toFixed(2) }} TL</p>
+        <p><strong>Alıcı Yeni Bakiye:</strong> {{ toAccountNewBalance.toFixed(2) }} TL</p>
+    </div>
+</div>

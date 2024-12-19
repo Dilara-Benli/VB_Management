@@ -1,0 +1,58 @@
+.transaction-history-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.transaction-history-header {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.transaction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.transaction-card {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.transaction-card p {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.transaction-card strong {
+    margin-right: 10px; /*etiket ve içerik arası boşluk*/
+}
+
+.transaction-card .transaction-amount {
+    font-weight: bold;
+}
+
+.transaction-card .transaction-amount.withdraw {
+    color: #e74c3c;
+}
+
+.no-transactions {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+}

@@ -1,0 +1,83 @@
+.account-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.account-header {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.account-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.account-card {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.account-card p {
+    display: flex;  /* Flexbox kullanarak öğeleri yatayda hizalayalım */
+    align-items: center;  /* Yatayda ortalama */
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.account-card strong {
+    margin-right: 10px;  /* Etiket ve input arasına biraz boşluk */
+}
+
+.account-card input[type="text"] {
+    padding: 5px;
+    margin-left: 10px;
+    width: auto;  /* Input genişliğini gerektiği kadar ayarlayın */
+}
+
+.account-card button {
+    background-color: #ffbb00;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px; 
+    margin-right: 5px; /* Butonlar arasına boşluk ekleme */
+    margin-top: 10px;
+}
+
+.account-card button:hover {
+    background-color: #ffae00;
+}
+
+.account-card button:focus {
+    outline: none;
+}
+
+.account-card .button-container {
+    display: flex;
+    gap: 10px; /* Butonlar arasına boşluk ekleme */
+    justify-content: flex-start;
+}
+
+.no-accounts {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+}

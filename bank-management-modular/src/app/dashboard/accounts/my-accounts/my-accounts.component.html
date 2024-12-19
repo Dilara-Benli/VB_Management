@@ -1,0 +1,27 @@
+<div class="account-container">
+    <h2 class="account-header">Hesaplarım</h2>
+    <div *ngIf="accounts && accounts.length > 0" class="account-list">
+        <div class="account-card" *ngFor="let account of accounts">
+            <p><strong>Hesap Adı:</strong> 
+                <span *ngIf="!editMode['accountName']" (dblclick)="toggleEditMode('accountName')">{{ account.accountName }}</span>
+                <input *ngIf="editMode['accountName']" [(ngModel)]="account.accountName" (blur)="toggleEditMode('accountName')" type="text" class="form-control" />
+            </p>
+            <p><strong>Hesap Numarası:</strong> {{ account.accountID }}</p>
+            <p><strong>Para Birimi:</strong>
+                <span *ngIf="!editMode['currencyType']" (dblclick)="toggleEditMode('currencyType')">{{ account.currencyType }}</span>
+                <select *ngIf="editMode['currencyType']" [(ngModel)]="account.currencyType" (blur)="toggleEditMode('currencyType')" class="form-control">
+                    <option value="TL">TL</option>
+                </select>
+            </p>
+            <p><strong>Bakiye:</strong> {{ account.accountBalance.toFixed(2) }} TL</p>
+            <div class="button-container">
+                <button (click)="updateAccount(account)">Güncelle</button>
+                <button (click)="deleteAccount(account)">Sil</button>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="accounts.length === 0" class="no-accounts">
+        <p>Hiç hesabınız bulunmamaktadır.</p>
+    </div>
+</div>

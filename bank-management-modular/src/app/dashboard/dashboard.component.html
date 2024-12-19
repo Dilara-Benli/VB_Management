@@ -1,0 +1,39 @@
+<div class="dashboard-header">
+  <img src="assets/logo.png" alt="VakıfBank Logo" class="logo" />
+  <div class="menu">
+    <ul class="menu-items">
+      <li class="menu-item">
+        <a routerLink="/dashboard/home">
+          <span>Anasayfa</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <span>İşlemler</span>
+        <ul class="dropdown">
+          <li><a routerLink="/dashboard/transactions/balance-check">Bakiye Sorgula</a></li>
+          <li><a routerLink="/dashboard/transactions/deposit">Para Yatır</a></li>
+          <li><a routerLink="/dashboard/transactions/withdraw">Para Çek</a></li>
+          <li><a routerLink="/dashboard/transactions/transfer">Transfer</a></li>
+          <li><a routerLink="/dashboard/transactions/transaction-history">İşlem Geçmişi</a></li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        <span>Hesaplar</span>
+        <ul class="dropdown">
+          <li><a routerLink="/dashboard/accounts/my-accounts">Hesaplarım</a></li>
+          <li><a routerLink="/dashboard/accounts/create-account">Yeni Hesap</a></li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        <span>Profil</span>
+        <ul class="dropdown">
+          <li><a routerLink="/dashboard/profile/my-profile">Profilim</a></li>
+          <li><a routerLink="/dashboard/profile/logout">Çıkış Yap</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="dashboard-content">
+  <router-outlet></router-outlet>
+</div>
