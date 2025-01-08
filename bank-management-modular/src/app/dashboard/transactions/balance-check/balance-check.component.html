@@ -2,7 +2,11 @@
     <h2>Bakiye Kontrolü</h2>
 
     <label for="accountID">Hesap Numarası:</label>
-    <input id="accountID" [(ngModel)]="accountData.accountID" class="form-control" type="number" placeholder="Hesap Numarası Girin" (keydown)="blockInvalidCharacters($event)"/>
+    <select id="accountID" [(ngModel)]="accountData.accountID" class="form-control">
+        <option *ngFor="let account of customerAccounts" [value]="account.accountID">
+            {{ account.accountID }} - {{ account.accountName }}
+        </option>
+    </select>
   
     <button (click)="checkBalance()" class="check-button">Kontrol Et</button>
 

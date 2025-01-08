@@ -7,40 +7,21 @@
     </div>
     <form [formGroup]="form" (ngSubmit)="onSubmit()" class="shadow p-4 rounded bg-white">
       <div class="mb-3">
-        <input
-          type="text"
-          class="form-control bg-body-secondary"
-          placeholder="Ad"
-          formControlName="name"
-        />
-        <div
-          class="error-feedback"
-          *ngIf="hasDisplayableError('name') && form.controls.name.hasError('required')"
-        >
+        <input type="text" class="form-control bg-body-secondary" placeholder="Ad" formControlName="name"/>
+        <div class="error-feedback"
+          *ngIf="hasDisplayableError('name') && form.controls.name.hasError('required')">
           Lütfen adınızı giriniz.
         </div>
       </div>
       <div class="mb-3">
-        <input
-          type="text"
-          class="form-control bg-body-secondary"
-          placeholder="Soyad"
-          formControlName="lastName"
-        />
-        <div
-          class="error-feedback"
-          *ngIf="hasDisplayableError('lastName') && form.controls.lastName.hasError('required')"
-        >
+        <input type="text" class="form-control bg-body-secondary" placeholder="Soyad" formControlName="lastName"/>
+        <div class="error-feedback"
+          *ngIf="hasDisplayableError('lastName') && form.controls.lastName.hasError('required')">
           Lütfen soyadınızı giriniz.
         </div>
       </div>
       <div class="mb-3">
-        <input
-          type="text"
-          class="form-control bg-body-secondary"
-          placeholder="TC Kimlik Numarası"
-          formControlName="identityNumber"
-        />
+        <input type="text" class="form-control bg-body-secondary" placeholder="TC Kimlik Numarası" formControlName="identityNumber"/>
         <div class="error-feedback" *ngIf="hasDisplayableError('identityNumber')">
           <div *ngIf="form.controls.identityNumber.hasError('required')">
             Lütfen TC kimlik numaranızı giriniz.
@@ -57,26 +38,14 @@
         </div>
       </div>
       <div class="mb-3">
-        <input
-          type="date"
-          class="form-control bg-body-secondary"
-          placeholder="Doğum Tarihi"
-          formControlName="birthDate"
-        />
-        <div
-          class="error-feedback"
-          *ngIf="hasDisplayableError('birthDate') && form.controls.birthDate.hasError('required')"
-        >
+        <input type="date" class="form-control bg-body-secondary" placeholder="Doğum Tarihi" formControlName="birthDate"/>
+        <div class="error-feedback"
+          *ngIf="hasDisplayableError('birthDate') && form.controls.birthDate.hasError('required')">
           Lütfen doğum tarihinizi giriniz.
         </div>
       </div>
       <div class="mb-3">
-        <input
-          type="email"
-          class="form-control bg-body-secondary"
-          placeholder="Mail Adresi"
-          formControlName="email"
-        />
+        <input type="email" class="form-control bg-body-secondary" placeholder="Mail Adresi" formControlName="email"/>
         <div class="error-feedback" *ngIf="hasDisplayableError('email')">
           <div *ngIf="form.controls.email.hasError('required')">
             Lütfen mail adresinizi giriniz.
@@ -87,12 +56,7 @@
         </div>
       </div>
       <div class="mb-3">
-        <input
-          type="password"
-          class="form-control bg-body-secondary"
-          placeholder="Şifre"
-          formControlName="password"
-        />
+        <input type="password" class="form-control bg-body-secondary" placeholder="Şifre" formControlName="password"/>
         <div class="error-feedback" *ngIf="hasDisplayableError('password')">
           <div *ngIf="form.controls.password.hasError('required')">
             Lütfen şifrenizi giriniz.
@@ -106,18 +70,9 @@
         </div>
       </div>
       <div class="mb-3">
-        <input
-          type="password"
-          class="form-control bg-body-secondary"
-          placeholder="Şifre Tekrar"
-          formControlName="confirmPassword"
-        />
-        <div
-          class="error-feedback"
-          *ngIf="
-            hasDisplayableError('confirmPassword') &&
-            form.controls.confirmPassword.hasError('passwordMismatch')"
-        >
+        <input type="password" class="form-control bg-body-secondary" placeholder="Şifre Tekrar" formControlName="confirmPassword"/>
+        <div class="error-feedback" *ngIf="hasDisplayableError('confirmPassword') &&
+            form.controls.confirmPassword.hasError('passwordMismatch')">
           Şifreler eşleşmiyor.
         </div>
       </div>

@@ -2,7 +2,11 @@
     <h2>Para Yatırma</h2>
 
     <label for="accountID">Hesap Numarası:</label>
-    <input id="accountID" [(ngModel)]="accountData.accountID" class="form-control" type="number" placeholder="Hesap Numarası Girin"/>
+    <select id="accountID" [(ngModel)]="accountData.accountID" class="form-control">
+        <option *ngFor="let account of customerAccounts" [value]="account.accountID">
+            {{ account.accountID }} - {{ account.accountName }}
+        </option>
+    </select>
 
     <label for="amount">Miktar:</label>
     <input id="amount" [(ngModel)]="accountData.amount" class="form-control" type="number" placeholder="Miktar Girin" (input)="onAmountInput($event)" (keydown)="blockInvalidCharacters($event)"/>

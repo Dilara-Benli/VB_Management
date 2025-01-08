@@ -2,7 +2,11 @@
     <h2>Para Transferi</h2>
 
     <label for="sourceAccountID">Gönderen Hesap Numarası:</label>
-    <input id="sourceAccountID" [(ngModel)]="accountData.sourceAccountID" class="form-control" type="number" placeholder="Gönderen Hesap Numarasını Girin"/>
+    <select id="sourceAccountID" [(ngModel)]="accountData.sourceAccountID" class="form-control">
+        <option *ngFor="let account of customerAccounts" [value]="account.accountID">
+            {{ account.accountID }} - {{ account.accountName }}
+        </option>
+    </select>
 
     <label for="targetAccountID">Alıcı Hesap Numarası:</label>
     <input id="targetAccountID" [(ngModel)]="accountData.targetAccountID" class="form-control" type="number" placeholder="Alıcı Hesap Numarasını Girin"/>

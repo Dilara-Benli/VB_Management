@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TransactionsService } from '../../../shared/services/transactions.service';
+import { AccountsService } from '../../../shared/services/accounts.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -12,11 +13,13 @@ import { ToastrService } from 'ngx-toastr';
 export class TransferComponent {
 
   accountData: any = {};
+  customerAccounts: any[] = [];
   fromAccountNewBalance: number | null = null;
   toAccountNewBalance: number | null = null;
 
   constructor(
-    private service: TransactionsService,
+    private transactionService: TransactionsService,
+    private accountService: AccountsService,
     private toastr: ToastrService){}
 
   onAmountInput(event: any): void {
@@ -35,6 +38,29 @@ export class TransferComponent {
     }
   }  
 
+  ngOnInit() {
+    this.loadCustomerAccounts();
+  }
+
+  loadCustomerAccounts() {
+    this.accountService.getAccountsByCustomer().subscribe({
+      next: (res: any) => {
+        if (res && res.accounts) {
+          this.customerAccounts = res.accounts;
+        } else {
+          this.customerAccounts = [];
+        }
+      },
+      error: (error) => {
+        if (error.status === 401)
+          this.toastr.error('Yetkiniz bulunmamaktadır.', 'Hata');
+        else
+          this.toastr.error(error.error?.message || 'Bir hata oluştu.', 'Hata');
+        this.customerAccounts = [];
+      }
+    });
+  }
+
   transfer() {
     const transferRequest = {
       sourceAccountID: this.accountData.sourceAccountID,
@@ -48,7 +74,7 @@ export class TransferComponent {
       return;
     }
 
-    this.service.transfer(transferRequest).subscribe({
+    this.transactionService.transfer(transferRequest).subscribe({
       next: (res: any) => {
         this.fromAccountNewBalance = res.fromAccountNewBalance;
         this.toAccountNewBalance = res.toAccountNewBalance;

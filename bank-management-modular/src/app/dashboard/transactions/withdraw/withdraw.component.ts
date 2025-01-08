@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TransactionsService } from '../../../shared/services/transactions.service';
+import { AccountsService } from '../../../shared/services/accounts.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -12,10 +13,12 @@ import { ToastrService } from 'ngx-toastr';
 export class WithdrawComponent {
   
   accountData: any = {};
+  customerAccounts: any[] = []; 
   newBalance: number | null = null;
 
   constructor(
-    private service: TransactionsService,
+    private transactionService: TransactionsService,
+    private accountService: AccountsService,
     private toastr: ToastrService){}
 
   onAmountInput(event: any): void {
@@ -34,6 +37,29 @@ export class WithdrawComponent {
     }
   }
 
+  ngOnInit() {
+    this.loadCustomerAccounts();
+  }
+
+  loadCustomerAccounts() {
+    this.accountService.getAccountsByCustomer().subscribe({
+      next: (res: any) => {
+        if (res && res.accounts) {
+          this.customerAccounts = res.accounts;
+        } else {
+          this.customerAccounts = [];
+        }
+      },
+      error: (error) => {
+        if (error.status === 401)
+          this.toastr.error('Yetkiniz bulunmamaktadır.', 'Hata');
+        else
+          this.toastr.error(error.error?.message || 'Bir hata oluştu.', 'Hata');
+        this.customerAccounts = [];
+      }
+    });
+  }
+
   withdraw() {
     const transactionRequest = {
       accountID: this.accountData.accountID,
@@ -46,7 +72,7 @@ export class WithdrawComponent {
       return;
     }
 
-    this.service.withdraw(transactionRequest).subscribe({
+    this.transactionService.withdraw(transactionRequest).subscribe({
       next: (res: any) => {
         this.newBalance = res.newBalance;
         this.toastr.success(res.message, 'Başarılı');
